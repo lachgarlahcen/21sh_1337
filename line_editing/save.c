@@ -6,7 +6,7 @@
 /*   By: llachgar <llachgar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 15:47:01 by llachgar          #+#    #+#             */
-/*   Updated: 2019/12/06 03:57:48 by llachgar         ###   ########.fr       */
+/*   Updated: 2019/12/20 04:30:07 by llachgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ t_hist	*save_hist(t_hist **hist)
 	return (*hist);
 }
 
-void	excute_key(t_key keys[19], t_cmd *l)
+void	excute_key(t_key keys[20], t_cmd *l)
 {
 	int i;
 
 	i = -1;
-	while (++i < 19)
+	while (++i < 20)
 		if (l->key == keys[i].key)
 			keys[i].f(l);
 }

@@ -6,7 +6,7 @@
 /*   By: llachgar <llachgar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 13:13:47 by llachgar          #+#    #+#             */
-/*   Updated: 2019/12/14 20:59:16 by llachgar         ###   ########.fr       */
+/*   Updated: 2019/12/20 04:50:45 by llachgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void		print_cmd(t_cmd *l)
 
 void		match_key(t_cmd *l)
 {
-	static t_key	keys[19] = {
+	static t_key	keys[20] = {
 		{RIGHT_K, &right_key},
 		{LEFT_K, &left_key},
 		{BACK_K, &delete},
@@ -90,7 +90,8 @@ void		match_key(t_cmd *l)
 		{TOP_K, &top_k},
 		{BOTTOM_K, &bottom_k},
 		{CTL_L, &ctl_l},
-		{ALT_A, &alt_a}
+		{ALT_A, &alt_a},
+		{TAB_K, &completion},
 	};
 
 	excute_key(keys, l);

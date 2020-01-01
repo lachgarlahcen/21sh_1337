@@ -6,7 +6,7 @@
 /*   By: llachgar <llachgar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 14:46:01 by llachgar          #+#    #+#             */
-/*   Updated: 2019/12/14 20:58:41 by llachgar         ###   ########.fr       */
+/*   Updated: 2020/01/01 08:27:31 by llachgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ typedef struct		s_cmd
 	int				h_p;
 	int				ctl_d;
 	int				ctl_c;
+	int				max_m;
 	struct winsize	w;
 	struct s_point	*init_p;
 	struct s_point	*cur_p;
@@ -191,4 +192,23 @@ void				alt_a(t_cmd *l);
 int					get_next_line(const int fd, char **line);
 void				write_backword(int fd, t_data *list);
 void				init_cur(t_cmd *l);
+void 				completion(t_cmd *l);
+void				path_completion(char *patt, t_cmd *l);
+/*
+** all function for  Linked list t_data management will be Finded here
+*/
+t_data				*new_node(char *new_data);
+void				sortedisert(t_data **head, t_data *new_node);
+void				free_data(t_data **head);
+/*
+** END T_DATA
+*/
+
+/*
+** All function in here is responsible to manage the select match like ft_select(42)
+*/
+void    print_matches(t_data *matches, t_cmd *l, int count, char *match);
+/*
+** END FT_SELECT
+*/
 #endif
